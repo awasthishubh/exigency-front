@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+    input[type="checkbox"] {
+        margin-top: 10px;
+        color: red;
+      }
+        .ty{
+            margin: 0px!important;
+            padding: 0px! important;
+            
+
+        }
+        .tw{
+            top:50%!important;
+            
+            height:400px;
+            
+            margin: -250 -275 ;
+            
+        }
+        body
+        {
+            
+            /*background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;*/
+            background: #7F00FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        ::placeholder {
+            color: black;
+            opacity: 1; 
+        }
+
+        #gm1, #dist, #gm2 {
+        height: 340px;}
+    </style>
+</head>
+<body>
+<!-- <body class="blue accent-4"> -->
+  
+   
+    
+            
+      <div class="row ty">
+        <div class="col l12 s12 m12 ty">
+          <div class="card  purple darken-4 ty">
+            <div class="card-content white-text">
+              <span class="card-title white-text" style="text-align: center; font-style: verdana; color: #212121;"><b>Transport</b></span>
+              
+            </div>
+            <nav>
+              <div class="nav-wrapper purple darken-4">
+                <!-- <a href="#" class="brand-logo right">Logo</a> -->
+                <ul id="nav-mobile" class="left">
+                  <li><a href="sass.html">Sass</a></li>
+                  <li><a href="badges.html">Components</a></li>
+                  <li><a href="collapsible.html">JavaScript</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- first page *************************************************************************************************************************************** -->
+  <div id="firstpage" >
+        
+        <div class="row" style="margin-top: 40px ">
+           <div class="col l3 m2 s1"></div>
+      <div class="col l6 m8 s10">
+        <div class="card-panel  white  tw ">
+          
+       
+      <div class="row">
+          
+          <div class="col l12 m12 s12">
+    <form class="col l12 m12 s12">
+      
+      <div class="row">
+
+<div class="input-field col l12 m12 s12 ">
+          <input id="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+
+ </div>
+     <div class="row">
+
+<div class="input-field col s12 m12 l12 ">
+          <input id="contnum" type="text" class="validate">
+          <label for="contnum">Contact Number</label>
+        </div>
+
+ </div>
+        <div class="row">
+
+<div class="input-field col s12 l12 m12 ">
+          <input id="email" type="text" class="validate">
+          <label for="email">Email</label>
+        </div>
+
+ </div>
+      <div class="row">
+          <center>
+             <div class="loading" style="display: none"><div class="indeterminate"></div>
+  </div>
+           <button class="btn waves-effect waves-light light-blue darken-2" type="submit" name="action" id="firstsub">Submit
+
+    <i class="material-icons right">send</i>
+  </button>
+
+  </center>
+      </div>
+      
+      
+    </form>
+    </div>
+  </div>
+</div>
+ </div>
+      </div>
+  </div>
+  <!-- second page ******************************************************************************************************************************* -->
+  <div id="secondpage" style="display: none">
+    <div class="row">
+  <div class="col l3 m2 s1"></div>
+    <div class="col l6 s10 m8">
+      <div class="card teal accent-3">
+            <div class="card-content black-text">
+              <span class="card-title"><center>Choose Location</center></span>
+              
+            </div>
+            
+          </div>
+    </div>
+  </div>
+<div class="row">
+        <div class="col s12 l6 m6">
+          <div class="card"><center>
+            <div class="card-content" id= "dist">
+              <div class="card-title" style="font-size: 25px;"><b>Affected Areas</b></div><br>
+              
+    
+   <form id="gfrm">
+    <!-- <p><input name="area" type="radio" id="test1" /><label for="test1" style="font-size: 25px; color: black;">Green Circle</label></p> -->
+    <br>
+  </form>
+            </div>
+            <div class="card-action"><center><b>Source</b></center></div>
+          </center></div>
+        </div>
+      
+  <div class="card col l6 m6 s12" >
+    <input id="search" type="text" placeholder="Search Box">
+    <div class="card-content" id="gm2">
+      
+    
+
+    </div>
+    <div class="card-action"><center><b>Destination</b></center></div>
+  </div>
+  
+</div>
+
+
+
+
+<div class="row">
+          <center>
+           <button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="secondsub">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  </center>
+      </div>
+</div>
+
+
+<!-- second page ******************************************************************************************************************************* -->
+<div id="secondpageb">
+<div class="row">
+    <div class="col l3 m2 s1"></div>
+    <div class="card col l6 m8 s10" >
+      <div class="card-content" style="padding-bottom: 0px">
+        <div class="card-title">Choose Your Location</div>
+        <input id="search" type="text" placeholder="Search Box">
+        <div id="gm1"></div>
+        <div class="card-action"><center><button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="secondsub">Submit
+      <i class="material-icons right">send</i>
+    </button></center></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+ <!-- third page*********************************************************************************************************************************** -->
+<div id="thirdpage" style="display: none">
+<div class="row">
+  <div class="col l3 m2 s1"></div>
+    <div class="col l6 s10 m8">
+      <div class="card teal accent-3">
+            <div class="card-content black-text">
+              <span class="card-title"><center>What Do You Provide?</center></span>
+              
+            </div>
+            
+          </div>
+    </div>
+  </div>
+<div class="row " style="">
+    <div class="col l3 m2"></div>
+    <div class="col l6 m8 s12">
+<!-- ###############         -->
+      <div class="row">
+      <div class="col l1 m1 s12"></div>
+      <div class="col l5 m5 s6">
+        <div class="card" id="os1">
+          <div class="card-image ">
+            <img src="images/medicine.jpg" class="newc" >
+          </div>
+          <div class="card-content">
+            <center><p>Medicines</p></center>
+          </div>
+        </div>
+      </div>
+      <div class="col l5 m5 s6">
+        <div class="card" id="os2">
+          <div class="card-image ">
+            <img src="images/clothes.jpg" class="newc" >
+          </div>
+          <div class="card-content">
+            <center><p>Clothes</p></center>
+          </div>
+        </div>
+      </div>
+      <div class="col l1"></div>
+</div>
+<!-- ###############         -->
+      
+<div class="row">
+      <div class="col l1 m1 s12"></div>
+      <div class="col l5 m5 s6">
+        <div class="card" id="os4">
+          <div class="card-image ">
+            <img src="images/fruits.jpg" class="newc" >
+          </div>
+          <div class="card-content">
+            <center><p>Food</p></center>
+          </div>
+        </div>
+      </div>
+      <div class="col l5 m5 s6">
+        <div class="card" id="os6">
+          <div class="card-image ">
+            <img src="images/hygiene.jpg" class="newc" >
+          </div>
+          <div class="card-content">
+            <center><p>Hygiene Products</p></center>
+          </div>
+        </div>
+      </div>
+      <div class="col l1"></div>
+</div>
+
+  <div class="row">
+          <center>
+           <button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="thirdsub" class="asd">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  </center>
+      </div>
+  </div>
+</div>
+</div>
+
+<!-- fourth page *********************************************************************************************************************************** -->
+
+  <div class="row sub" id="sub1" style="display: none">
+        <div class="col l3 m2 s1"></div>
+        <div class="col l6 m8 s10">
+          <div class="card white">
+            <div class="card-content">
+              <span class="card-title"><center><b>MEDICINES</b></center></span>
+              <br>
+              <br>
+              <p>
+            <div class="row">
+              <div class="col l2"></div>
+              <div class="col l4">  
+             <input type="checkbox" name="item" id="test1" />
+              <label id="label1" for="test1">CALPOL</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test2" />
+              <label id="label2" for="test2">SAVLON</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test3" />
+              <label id="label3" for="test3">PHENYLPHRINE</label><br>
+              <br>
+            <input type="checkbox" name="item" id="test4" />
+              <label id="label4" for="test4">ALOE VERA GEL</label><br>
+              <br>
+               <input type="checkbox" name="item" id="test5" />
+              <label id="label5" for="test5">THERMOMETER</label><br>
+            </div>
+
+            
+
+              <div class="col l4">  
+             <input type="checkbox" name="item" id="test6" />
+              <label id="label6" for="test6">ANTIBIOTIC OINTMENT</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test7" />
+              <label id="label7" for="test7">COTTON BALLS</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test8" />
+              <label id="label8" for="test8">EYEWASH SOLUTION</label><br>
+              <br>
+            <input type="checkbox" name="item" id="test9" />
+              <label id="label9" for="test9">BANDAID</label><br>
+              <br>
+               <input type="checkbox" name="item" id="test10" />
+              <label id="label10" for="test10">SOFRAMYCIN</label><br>
+            </div>    
+
+
+          </div>
+
+            </p>
+             
+            </div>
+            <div class="card-action">
+              <center>
+               <button class="btn waves-effect waves-light btnn" type="submit" name="action">Back
+                <i class="material-icons left">arrow_back</i>
+                </button>
+        
+            </center>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--########################################################################################-->
+
+    <div class="row sub" style="display: none" id="sub2">
+        <div class="col l3 m2 s1"></div>
+        <div class="col l6 m8 s10">
+          <div class="card white">
+            <div class="card-content">
+              <span class="card-title"><center><b>CLOTHES</b></center></span>
+              <br>
+              <br>
+              <p>
+            <div class="row">
+              <div class="col l3"></div>
+              <div class="col l4">  
+             <input type="checkbox" name="item" id="test11" />
+              <label id="label11" for="test11">MEN</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test12" />
+              <label id="label12" for="test12">WOMEN</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test13" />
+              <label id="label13" for="test13">KIDS</label><br>
+              <br>
+            <input type="checkbox" name="item" id="test14" />
+              <label id="label14" for="test14">TOWELS</label><br>
+              <br>
+               <input type="checkbox" name="item" id="test15" />
+              <label id="label15" for="test15">BLANKETS</label><br>
+            </div>
+
+            
+
+             
+
+
+          </div>
+
+            </p>
+             
+            </div>
+            <div class="card-action">
+              <center>
+               <button class="btn waves-effect waves-light btnn" type="submit" name="action">Back
+                <i class="material-icons left">arrow_back</i>
+                </button>
+        
+            </center>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--########################################################################################-->
+<div class="row sub" style="display: none" id="sub4">
+        <div class="col l3 m2 s1"></div>
+        <div class="col l6 m8 s10">
+          <div class="card white">
+            <div class="card-content">
+              <span class="card-title"><center><b>FOOD</b></center></span>
+              <br>
+              <br>
+              <p>
+            <div class="row">
+              <div class="col l3"></div>
+              <div class="col l4">  
+             <input type="checkbox" name="item" id="test16" />
+              <label id="label16" for="test16">CEREALS</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test17"/>
+              <label id="label17" for="test17">RICE</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test18" />
+              <label id="label18" for="test18">FRUITS</label><br>
+              <br>
+            <input type="checkbox" name="item" id="test19" />
+              <label id="label19" for="test19">WATER</label><br>
+              <br>
+               <input type="checkbox" name="item" id="test20" />
+              <label id="label20" for="test20">MILK</label><br>
+            </div>
+
+            
+
+            
+          </div>
+
+            </p>
+             
+            </div>
+            <div class="card-action">
+              <center>
+               <button class="btn waves-effect waves-light btnn" type="submit" name="action">Back
+                <i class="material-icons left">arrow_back</i>
+                </button>
+        
+            </center>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--########################################################################################-->
+
+
+    <!--########################################################################################-->
+
+<div class="row sub" style="display: none" id="sub6">
+        <div class="col l3 m2 s1"></div>
+        <div class="col l6 m8 s10">
+          <div class="card white">
+            <div class="card-content">
+              <span class="card-title"><center><b>HYGIENE PRODUCTS</b></center></span>
+              <br>
+              <br>
+              <p>
+            <div class="row">
+              <div class="col l3"></div>
+              <div class="col l4">  
+             <input type="checkbox" name="item" id="test26" />
+              <label id="label26" for="test26">SOAP</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test27" />
+              <label id="label27" for="test27">HAND SANETIZERS</label><br>
+              <br>
+              <input type="checkbox" name="item" id="test28" />
+              <label id="label28" for="test28">SANITARY NAPKINS</label><br>
+              <br>
+            <input type="checkbox" name="item" id="test29" />
+              <label id="label29" for="test29">TISSUES</label><br>
+              <br>
+               <input type="checkbox" name="item" id="test30" />
+              <label id="label30" for="test30">PORTABLE TOILETS</label><br>
+            </div>
+
+          </div>
+
+            </p>
+             
+            </div>
+            <div class="card-action">
+              <center>
+               <button class="btn waves-effect waves-light btnn" type="submit" name="action">Back
+                <i class="material-icons left">arrow_back</i>
+                </button>
+        
+            </center>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--########################################################################################-->
+
+
+<div class="row" id="fifthpage" style="display: none">
+  <div class="col l3 m2 s1"></div>
+  <div class="card col l6 m8 s10">
+    <div class="card-content">
+      <div class="card-title">Thank You</div>
+      We will get back to you shortly. :)
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="js/MapSelect.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDBY7PoZFZMCwcdPNhkAAYuj7f79uuAk&libraries=places&callback=initAutocomplete"
+         async defer></script>
+         <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/defined.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+
+      
+<script type="text/javascript">
+function map2(data) {
+  var myLatLng = {lat: 20.5937, lng: 78.9629};
+
+  var map = new google.maps.Map(document.getElementById('gm2'), {
+    zoom: 4,
+    center: myLatLng
+  });
+
+
+  for (var i = 0; i<data.length; i++) {
+    console.log(data[i].pos)
+    console.log(myLatLng)
+    new google.maps.Marker({
+    position: data[i].pos,
+    map: map,
+    title: data[i].title
+  });
+    myLatLng.lat-=1;
+  }
+
+//   var myLatLng = {lat: -25.363, lng: 131.044};
+
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 4,
+//     center: myLatLng
+//   });
+
+//   var marker = new google.maps.Marker({
+//     position: myLatLng,
+//     map: map,
+//     title: 'Hello World!'
+//   });
+// }
+  
+
+ 
+}
+</script>
+</body>
+
+
+
+
