@@ -1,4 +1,4 @@
- var name, email, phno, dpos={}, dtitle, spos, sid, partners=[], items=[], area=[];
+ var name, email, phno, dpos={}, dtitle, spos, sid, partners=[], items=[], area=[], mem=[], mmi=[];
 
  $('#firstsub').click(function(event){
           event.preventDefault();   
@@ -12,9 +12,9 @@
           return
         }
             
-           $.ajax({
+        $.ajax({
         type: 'POST',
-        url: 'http://172.17.28.151:1337/area',
+        url: 'http://localhost:1337/area',
         
         beforeSend: function() {
             $(".btn").hide();
@@ -27,11 +27,9 @@
         for (var i = 0; i < area.length; i++) {
           ar=area[i];
           txt='<p><input name="area" type="radio" id="test'+i+'" /><label for="test'+i+'" style="font-size: 25px; color: black;">'+ar.title+'</label></p>';
-        $("#gfrm").html($("#gfrm").html()+txt);
-        area[i].pos.lat=parseFloat(area[i].pos.lat)
-        area[i].pos.lng=parseFloat(area[i].pos.lng)   
-
-
+          $("#gfrm").html($("#gfrm").html()+txt);
+          area[i].pos.lat=parseFloat(area[i].pos.lat)
+          area[i].pos.lng=parseFloat(area[i].pos.lng)
         }
 
         map2(area)
@@ -59,10 +57,43 @@
         $('#secondsub').click(function(event){
           event.preventDefault();   
           if(!$("input[name=area]:checked").attr("id")){
-            alert("Choose lcation")
+            alert("Choose location")
             return
           }
-          console.log("sd");
+          console.log("sded");
+
+          $.ajax({
+        type: 'POST',
+        url: 'http://localhost:1337/mem',
+        
+        beforeSend: function() {
+            $(".btn").hide();
+            $(".loading").show();
+        }
+    }).done(function(data) {  
+        console.log(data);
+        
+        for (var i = 0; i < data.length; i++) {
+              if(data[i].sid==sid)
+              mem.push(data[i]);
+            } 
+            console.log("mem");
+        console.log(mem);
+        for (var i = 0; i < mem.length; i++) {
+              txt='<tr><td><input name="mem" type="radio" id="memm'+i+'"/><label for="memm'+i+'"></label></td><td>'+mem[i].name+'</td><td>'+mem[i].dtitle+'</td></tr';
+              $("#mem").html($("#mem").html()+txt);
+              mem[i].dpos.lat=parseFloat(mem[i].dpos.lat)
+              mem[i].dpos.lng=parseFloat(mem[i].dpos.lng)
+            }  
+
+        map3(mem);  
+
+    }).catch(function(err) {
+        console.log(err);
+        console.log("Sab galat hai");
+      });
+
+
 
           i=parseInt($("input[name=area]:checked").attr("id").slice(4))
           spos=area[i].pos;
@@ -72,16 +103,41 @@
 
           $('#secondpage').hide('slow');
           $('#secondpageb').show('slow');
+          $(".btn").show();
         })
 
         $('#secondsubb').click(function(event){
           event.preventDefault();   
+          i=parseInt($("input[name=mem]:checked").attr("id").slice(4))
+          console.log(mem[i]);
+          mmi=mem[i];
+          $('#mememail').html(mem[i].email);
+          $('#memname').html(mem[i].name);
+          $('#memphno').html(mem[i].phno);
+          
+          if(mem[i].items!=null){
+          for (var j = 0; j < mem[i].items.length; j++) {
+            id="label"+mem[i].items[j ].slice(4)
+            console.log(id);
+            txt='<div class="col m6 s12">'+$('#'+id).html()+'</div>';
+            $('#memitem').html($('#memitem').html()+txt);    
+            }
+          }
+          else $('#memitem').html('No ResourseS Available')
+          items=mmi.items;
+
           console.log("sd");
           $('#secondpageb').hide('slow');
+          $('#secondpagec').show('slow');
+          
+        })
+
+        $('#secondsubc').click(function(event){
+          event.preventDefault();   
+          console.log("sd");
+          $('#secondpagec').hide('slow');
           $('#thirdpage').show('slow');
-          dpos.lat=marker1.getPosition().lat()
-          dpos.lng=marker1.getPosition().lng()
-          dtitle=ttl;
+          
         })
 
 
@@ -90,23 +146,23 @@
         $('#thirdsub').click(function(event){
           event.preventDefault();   
           console.log("sd");
+
+          if(mmi.team==null) mmi.team=[];
+          if(items==null) items=[];
           
           $.each($("input[name='item']:checked"), function () {
             items.push($(this).attr('id'));
             });
+          memb={'name':name, 'email':email, 'phno':phno};
+
+          mmi.team.push(memb);
 
           $.ajax({
           type:'GET',
-          url:'http://172.17.28.151:1337/mem/create',
+          url:'http://localhost:1337/mem/create',
           data: { 
-          'name':name,
-          'email':email,
-          'dpos':dpos,
-          'spos':spos,
-          'sid':sid,
-          'dtitle':dtitle,
-          'phno':phno,
-          'items':items,
+          'team':mmi.tea,
+          'items':items
           },
           beforeSend: function() {
               
@@ -117,9 +173,7 @@
           $('#fifthpage').show('slow');
               console.log("sentdffd");
               console.log(data);
-             
-          })
-
+            })
         })
 
         $('#fourthsub').click(function(event){
@@ -127,7 +181,7 @@
           console.log("sd");
           $('#firstpage').hide('slow');
           $('#secondpage').show('slow');
-        })
+        })  
 
         $('.btnn').click(function(event){
           event.preventDefault();   
