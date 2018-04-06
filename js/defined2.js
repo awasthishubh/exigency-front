@@ -14,7 +14,7 @@
             
         $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/area',
+        url: 'https://exigency.herokuapp.com/area',
         
         beforeSend: function() {
             $(".btn").hide();
@@ -64,7 +64,7 @@
 
           $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/mem',
+        url: 'https://exigency.herokuapp.com/mem',
         
         beforeSend: function() {
             $(".btn").hide();
@@ -160,7 +160,7 @@
 
           $.ajax({
           type:'GET',
-          url:'http://localhost:1337/mem/delete',
+          url:'https://exigency.herokuapp.com/mem/delete',
           data: {
           'id':mmi.id
           },
@@ -173,7 +173,7 @@
 
           $.ajax({
           type:'GET',
-          url:'http://localhost:1337/mem/create',
+          url:'https://exigency.herokuapp.com/mem/create',
           data: mmi,
           beforeSend: function() {
               

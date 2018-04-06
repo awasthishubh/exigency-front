@@ -14,7 +14,7 @@
             
            $.ajax({
         type: 'POST',
-        url: 'http://localhost:1337/area',
+        url: 'https://exigency.herokuapp.com/area',
         
         beforeSend: function() {
             $(".btn").hide();
@@ -97,7 +97,7 @@
 
           $.ajax({
           type:'GET',
-          url:'http://localhost:1337/mem/create',
+          url:'https://exigency.herokuapp.com/mem/create',
           data: { 
           'name':name,
           'email':email,
