@@ -156,24 +156,36 @@
           memb={'name':name, 'email':email, 'phno':phno};
 
           mmi.team.push(memb);
+          mmi.items
+
+          $.ajax({
+          type:'GET',
+          url:'http://localhost:1337/mem/delete',
+          data: {
+          'id':mmi.id
+          },
+          beforeSend: function() {
+            console.log("begoresend");
+          }
+          }).done(function(data){
+            
+            })
 
           $.ajax({
           type:'GET',
           url:'http://localhost:1337/mem/create',
-          data: { 
-          'team':mmi.tea,
-          'items':items
-          },
+          data: mmi,
           beforeSend: function() {
               
               console.log("begoresend");
           }
           }).done(function(data){
-            $('#thirdpage').hide('slow');
+           $('#thirdpage').hide('slow');
           $('#fifthpage').show('slow');
               console.log("sentdffd");
               console.log(data);
-            })
+             
+          })
         })
 
         $('#fourthsub').click(function(event){

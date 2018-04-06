@@ -27,24 +27,37 @@
             margin: -250 -275 ;
             
         }
-        body
+              .card{
+          background-color: rgba(255, 255, 255, 0.9)!important;
+        }
+        /*body
         {
-            
-            /*background-image: url("");
-            background-repeat: no-repeat;
-            background-size: cover;*/
-            background: #7F00FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #7F00FF;  
+background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  
+background: linear-gradient(to right, #E100FF, #7F00FF); 
 
         }
         ::placeholder {
             color: black;
             opacity: 1; 
+        }*/
+
+        html { 
+  
+    background: url(Images/wall.jpg) no-repeat center center fixed; 
+  height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+ }
+        ::placeholder {
+            color: black;
+            opacity: 1; 
         }
 
-        #gm1, #dist, #gm2 {
-        height: 340px;}
+        #gm1, .dist, #gm2, #dist, #xc{
+        height: 340px!important;}
     </style>
 </head>
 <body>
@@ -57,16 +70,16 @@ background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, F
         <div class="col l12 s12 m12 ty">
           <div class="card  purple darken-4 ty">
             <div class="card-content white-text">
-              <span class="card-title white-text" style="text-align: center; font-style: verdana; color: #212121;"><b>Excigency</b></span>
+              <span class="card-title white-text" style="text-align: center; font-style: verdana; color: #212121;"><b>Exigency</b></span>
               
             </div>
             <nav>
               <div class="nav-wrapper purple darken-4">
-                <!-- <a href="#" class="brand-logo right">Logo</a> -->
+                <a href="#" class="brand-logo right hide-on-small-only">Need Help</a>
                 <ul id="nav-mobile" class="left">
-                  <li><a href="index.html">Provide Help</a></li>
-                  <li><a href="affected.html">Need Help</a></li>
-                  <li><a href="#">Admin</a></li>
+                  <li><a href="index.htm">Provide Help</a></li>
+                  <li class="active"><a href="#">Need Help</a></li>
+                  <li><a href="admin.htm">Admin</a></li>
                 </ul>
               </div>
             </nav>
@@ -81,7 +94,7 @@ background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, F
         <div class="row" style="margin-top: 40px ">
            <div class="col l3 m2 s1"></div>
       <div class="col l6 m8 s10">
-        <div class="card-panel  white  tw ">
+        <div class="card tw ">
           
        
       <div class="row">
@@ -138,7 +151,7 @@ background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, F
     <div class="row">
   <div class="col l3 m2 s1"></div>
     <div class="col l6 s10 m8">
-      <div class="card teal accent-3">
+      <div class="card light-blue darken-3 accent-3">
             <div class="card-content black-text">
               <span class="card-title"><center>Choose Location</center></span>
               
@@ -150,29 +163,21 @@ background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, F
 <div class="row">
         <div class="col s12 l6 m6">
           <div class="card"><center>
-            <div class="card-content" id= "dist">
-              <div class="card-title" style="font-size: 25px;"><b>Affected Areas</b></div><br>
-              
-    
-   <form id="gfrm">
-    <!-- <p><input name="area" type="radio" id="test1" /><label for="test1" style="font-size: 25px; color: black;">Green Circle</label></p> -->
-    <br>
-  </form>
+            <div class="card-content" id= "dist" style="height: 340px;overflow: scroll;"">
+              <div class="card-title" style="font-size: 25px;"><b>Available Location</b></div><br>
+                <form id="gfrm">
+                  <!-- <p><input name="area" type="radio" id="test1" /><label for="test1" style="font-size: 25px; color: black;">Green Circle</label></p> -->
+                  <br>
+                </form>
             </div>
             <!-- <div class="card-action"><center><b>Source</b></center></div> -->
           </center></div>
         </div>
       
-  <div class="card col l6 m6 s12" >
-    
-    <div class="card-content" id="gm2">
-      
-    
-
-    </div>
+        <div class="card col l6 m6 s12" >
+            <div class="card-content" id="gm2"></div>
     <!-- <div class="card-action"><center><b>Destination</b></center></div> -->
-  </div>
-  
+        </div>
 </div>
 
 
@@ -181,29 +186,145 @@ background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, F
 <div class="row">
           <center>
            <button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="secondsub">Submit
-    <i class="material-icons right">send</i>
-  </button>
+            <i class="material-icons right">send</i>
+           </button>
+          </center>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <table class="striped" border="0">
+          <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Distance</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><input name="group1" type="radio" id="test3"  />
+        <label for="test3"></label></td>
+              <td>Arushi Shah</td>
+              <td>34km</td>
+            </tr>
+            <tr>
+              <td><input class="without-gap" name="group1" type="radio" id="test4"  />
+        <label for="test4"></label></td>
+              <td>Sakshi Gupta</td>
+              <td>10km</td>
+            </tr>
+            <tr>
+              <td><input class="without-gap" name="group1" type="radio" id="test5"  />
+        <label for="test5"></label></td>
+              <td>Nikita Nandankar</td>
+              <td>20km</td>
+            </tr>
+          </tbody>
+        </table> -->
+<!-- second page ******************************************************************************************************************************* -->
+
+<div id="secondpageb" style="display: none">
+    <div class="row">
+      <div class="col l3 m2 s1"></div>
+        <div class="col l6 s10 m8">
+          <div class="card light-blue darken-3 accent-3">
+              <div class="card-content black-text">
+                <span class="card-title"><center>Choose Location</center></span>
+                
+              </div>
+            </div>
+      </div>
+  </div>
+<div class="row">
+        <div class="col s12 l6 m6">
+          <div class="card"><center>
+            <div class="card-content" style="height: 340px;overflow: scroll;">
+              <div class="card-title" style="font-size: 25px;"><b>Affected Areas</b></div><br>
+                <table class="striped" border="0">
+          <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Distance</th>
+            </tr>
+          </thead>
+
+          <tbody id="mem" style="position: relative;">
+              <!-- <tr>
+                <td><input name="xc" type="radio" id="z" /><label for="z"></label></td>
+                <td>Arushi Shah</td>
+                <td>34km</td>
+              </tr> -->
+          </tbody>
+        </table>
+            </div>
+            <!-- <div class="card-action"><center><b>Source</b></center></div> -->
+          </center></div>
+        </div>
+      
+        <div class="card col l6 m6 s12" >
+            <div class="card-content" id="gm1"></div>
+    <!-- <div class="card-action"><center><b>Destination</b></center></div> -->
+        </div>
+</div>
+
+
+
+
+<div class="row">
+    <center>
+     <button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="secondsubb">Submit
+      <i class="material-icons right">send</i>
+    </button>
   </center>
       </div>
 </div>
 
+<!-- ###################################################################################################### -->
 
-<!-- second page ******************************************************************************************************************************* -->
-<div id="secondpageb" style="display: none;">
-<div class="row">
-    <div class="col l3 m2 s1"></div>
-    <div class="card col l6 m8 s10" >
-      <div class="card-content" style="padding-bottom: 0px">
-        <div class="card-title">Choose Your Location</div>
-        <input id="search" type="text" placeholder="Search Box">
-        <div id="gm1"></div>
-        <div class="card-action"><center><button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="secondsubb">Submit
-      <i class="material-icons right">send</i>
-    </button></center></div>
-      </div>
-    </div>
-    
-  </div>
+
+<div id="secondpagec" >
+        
+      <div class="row" style="margin-top: 40px ">
+         <div class="col l3 m2 s1"></div>
+          <div class="col card l6 m8 s10">
+            <div class="card-content">
+              <div class="card-title"><b>Name:</b></div>
+                <div id="memname" style="margin-left: 40px; margin-bottom: 30px; font-size: 20px">Shubham</div>
+
+            <div class="col l6 m7 s12">
+              <div class="card-title "><b>Email:</b></div>
+                <div id="mememail" style="margin-left: 40px; margin-bottom: 30px; font-size: 20px">Shubham@gmail.com</div>
+            </div>
+            <div class="col l6 m5 s12">
+                <div class="card-title"><b>Phno:</b></div>
+                <div id="memphno" style="margin-left: 40px; margin-bottom: 30px; font-size: 20px">941543556</div>
+            </div>
+            <div class="col l12 m12 s12">
+                <div class="card-title"><b>Resourse Available:</b></div>
+                <div id="memitem">
+                  <!-- <div class="col m6 s12">df</div> -->
+                </div>
+            </div>
+            </div>
+            <div class="row">
+              <center>
+               <button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="secondsubc">Submit
+                <i class="material-icons right">send</i>
+               </button>
+              </center>
+            </div>
+          </div>
+     </div>
+     
 </div>
 
  <!-- third page*********************************************************************************************************************************** -->
@@ -211,9 +332,9 @@ background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, F
 <div class="row">
   <div class="col l3 m2 s1"></div>
     <div class="col l6 s10 m8">
-      <div class="card teal accent-3">
+      <div class="card light-blue darken-3 accent-3">
             <div class="card-content black-text">
-              <span class="card-title"><center>What Do You Provide?</center></span>
+              <span class="card-title"><center>Add Resourses</center></span>
               
             </div>
             
@@ -520,13 +641,13 @@ background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, F
 
 
 
-<script src="js/MapSelect.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDBY7PoZFZMCwcdPNhkAAYuj7f79uuAk&libraries=places&callback=initAutocomplete"
+<!-- <script src="js/MapSelect.js"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDBY7PoZFZMCwcdPNhkAAYuj7f79uuAk&libraries=places"
          async defer></script>
          <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script type="text/javascript" src="js/defined.js"></script>
+      <script type="text/javascript" src="js/defined2.js"></script>
 
 <script type="text/javascript">
 
@@ -552,25 +673,30 @@ function map2(data) {
     map: map,
     title: data[i].title
   });
-    myLatLng.lat-=1;
-  }
-
-//   var myLatLng = {lat: -25.363, lng: 131.044};
-
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 4,
-//     center: myLatLng
-//   });
-
-//   var marker = new google.maps.Marker({
-//     position: myLatLng,
-//     map: map,
-//     title: 'Hello World!'
-//   });
-// }
   
+  } 
+}
 
- 
+
+function map3(data) {
+  var myLatLng = {lat: 20.5937, lng: 78.9629};
+
+  var map = new google.maps.Map(document.getElementById('gm1'), {
+    zoom: 4,
+    center: myLatLng
+  });
+
+
+  for (var i = 0; i<data.length; i++) {
+    console.log(data[i].pos)
+    console.log(myLatLng)
+    new google.maps.Marker({
+    position: data[i].dpos,
+    map: map,
+    title: data[i].dtitle+' '+data[i].Name
+  });
+  
+  } 
 }
 </script>
 </body>

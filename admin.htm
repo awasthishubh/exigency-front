@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+    input[type="checkbox"] {
+        margin-top: 10px;
+        color: red;
+      }
+        .ty{
+            margin: 0px!important;
+            padding: 0px! important;
+            
+
+        }
+        .tw{
+            top:50%!important;
+            
+            height:400px;
+            
+            margin: -250 -275 ;
+            
+        }
+        /*body
+        {
+            background: #7F00FF;  
+background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  
+background: linear-gradient(to right, #E100FF, #7F00FF); 
+
+        }
+        ::placeholder {
+            color: black;
+            opacity: 1; 
+        }*/
+
+        html { 
+  
+    background: url(Images/wall.jpg) no-repeat center center fixed; 
+  height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+ }
+        ::placeholder {
+            color: black;
+            opacity: 1; 
+        }
+              .card{
+          background-color: rgba(255, 255, 255, 0.9)!important;
+        }
+
+        #gm1, #dist, #gm2 {
+        height: 340px;}
+    </style>
+</head>
+<body>
+<!-- <body class="blue accent-4"> -->
+  
+   
+    
+            
+      <div class="row ty">
+        <div class="col l12 s12 m12 ty">
+          <div class="card  purple darken-4 ty">
+            <div class="card-content white-text">
+              <span class="card-title white-text" style="text-align: center; font-style: verdana; color: #212121;"><b>Excigency</b></span>
+              
+            </div>
+            <nav>
+              <div class="nav-wrapper purple darken-4">
+                <a href="#" class="brand-logo right hide-on-small-only">Admin</a>
+                <ul id="nav-mobile" class="left">
+
+                  <li><a href="index.htm">Provide Help</a></li>
+                  <li><a href="help.htm">Need Help</a></li>
+                  <li class="active"><a href="#">Admin</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+      </div>
+
+
+<div id="secondpage">
+<div class="row">
+        <div class="col l3 m3 s3"></div>
+      
+  <div class="card col l6 m6 s12" >
+    <input id="search" type="text" placeholder="Search Box">
+    <div class="card-content" id="gm1">
+      
+    
+
+    </div>
+    <div class="card-action"><center><b>Choose Location Affected By T-Virus</b></center></div>
+  </div>
+  
+</div>
+
+
+
+
+<div class="row">
+          <center>
+           <button class="btn waves-effect waves-light light-blue darken-3" type="submit" name="action" id="secondsub">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  </center>
+      </div>
+</div>
+
+
+<div class="row" id="fifthpage" style="display: none">
+  <div class="col l3 m2 s1"></div>
+  <div class="card col l6 m8 s10">
+    <div class="card-content">
+      <div class="card-title">Affected Location Added</div>
+      
+    </div>
+  </div>
+</div>
+
+<script src="js/MapSelect.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDBY7PoZFZMCwcdPNhkAAYuj7f79uuAk&libraries=places&callback=initAutocomplete"
+         async defer></script>
+         <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript">
+        
+        var pos={},title
+        $('#secondsub').click(function(event){
+          event.preventDefault();   
+          console.log("sd");
+          pos.lat=marker1.getPosition().lat()
+          pos.lng=marker1.getPosition().lng()
+          title=ttl;
+
+          $.ajax({
+          type:'GET',
+          url:'http://localhost:1337/area/create',
+          data: { 
+          'pos': pos,
+          'title': title,
+          },
+          beforeSend: function() {
+              
+              console.log("begoresend");
+          }
+          }).done(function(data){
+            $("#fifthpage").show('slow')
+            $("#secondpage").hide('hide')
+              console.log("sentdffd");
+              
+              console.log(data);
+             
+          })
+        })
+
+        
+
+
+      </script>
+    </body>   
+  </html>

@@ -14,7 +14,7 @@
             
            $.ajax({
         type: 'POST',
-        url: 'http://172.17.28.151:1337/area',
+        url: 'http://localhost:1337/area',
         
         beforeSend: function() {
             $(".btn").hide();
@@ -97,7 +97,7 @@
 
           $.ajax({
           type:'GET',
-          url:'http://172.17.28.151:1337/mem/create',
+          url:'http://localhost:1337/mem/create',
           data: { 
           'name':name,
           'email':email,
